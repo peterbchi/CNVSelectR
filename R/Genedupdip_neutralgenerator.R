@@ -1,3 +1,19 @@
+#   Build and Reload Package:  'Ctrl + Shift + B'
+#   Check Package:             'Ctrl + Shift + E'
+#   Test Package:              'Ctrl + Shift + T'
+
+#' Neutral model generator
+#'
+#' This function creates the infinitesimal generator for the model
+#'
+#'
+#' @param N population size
+#' @param up Poisson rate of pseudogenization
+#' @keywords phylogeny, CNV, neutral model
+#' @export
+#' @examples
+#' Genedupdip_neutralgenerator(N, up)
+
 Genedupdip_neutralgenerator <- function(N,up){
   #Generator for the model without neofunctionalization
   Pos <- matrix(0, ncol=N+1, nrow=N+1)
