@@ -190,6 +190,6 @@ mexpv_dipneut <- function(t, A, v,N,Pos, tol=1e-7, m=NULL){
   err <- s_error
   hump <- hump / normv
 
-  return(list(dupgenomesavgMat,PIlowerMat,PIupperMat,tlist,w))
+  return(list(dupgenomesavgMat,PIlowerMat,PIupperMat,tlist, pn ,w))
 }
 
