@@ -11,4 +11,5 @@ Encoding: UTF-8
 LazyData: true
 Depends:
         Matrix,
-        seqinr
+        seqinr,
+        readr
