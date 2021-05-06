@@ -24,8 +24,8 @@ CNVSelect_test <- function(input_file, fasta_file){
   output$dS <- dS
 
   for(i in 1:length(dS)){
-    t <- (100/3e-2)*dS[i]
-    up <- 35*dS[i]
+    up <- 1e-3
+    t <- (dS[i]*35)/up
 
     out1 <- Genedupdip_neutralgenerator(inputs$N, up)
     out2 <- mexpv_dipneut(t=t, A=t(out1[[1]]), v=out1[[2]], N=inputs$N, Pos=out1[[3]])
