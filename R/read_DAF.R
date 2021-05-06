@@ -4,7 +4,8 @@
 
 #' Read inputs from csv file
 #'
-#' This function reads inputs from a file corresponding to duplicated sequences
+#' This function reads inputs from a file corresponding to duplicated sequences,
+#' to be used in Genedupdip_neutralgenerator and mexpv_dipneut functions
 #'
 #'
 #' @param file file path
@@ -21,7 +22,7 @@ read_DAF <- function(file){
   output <- list()
   output$N <- as.numeric(DAF[1,2])   # N
   output$ploidy <- as.numeric(DAF[2,2])   # ploidy
-  output$freqs <- as.numeric(DAF[5:first.col,1]$X1)
+  output$freqs <- as.numeric(DAF[5:first.col,1]$X1)  # frequencies
 
   return(output)
 }
