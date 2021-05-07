@@ -15,7 +15,7 @@
 #' read_DAF(file)
 
 read_DAF <- function(file){
-  DAF <- read_csv(file, col_names = FALSE)
+  DAF <- read_csv(file, col_names = FALSE, col_types=cols())
 
   first.col <- dim(DAF)[1]
 

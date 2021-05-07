@@ -158,7 +158,6 @@ Genedupdip_neutralgenerator <- function(N,up){
   #e1 is initial distribution
   e1 <- sparseMatrix(i=1,j=Pos[2,1],x=1,dims=c(1,count), symmetric=FALSE)
   return(list(Q, e1, Pos))
-#  return(list(ii, jj, vv, count))
 
 }
 
@@ -168,7 +167,7 @@ pbirth <- function(i,j,k,N){
     pbi <- (i/N)*(i-1)/(N-1) + (1/4)*(j/N)*(j-1)/(N-1) + (j/N)*i/(N-1)
     pbj <- (j/N)*(k/(N-1)) + (j/N)*(i/(N-1)) + (1/2)*(j/N)*((j-1)/(N-1)) +2*(i/N)*(k/(N-1))
     pbk <- (k/N)*((k-1)/(N-1)) + (j/N)*(k/(N-1)) + (1/4)*(j/N)*((j-1)/(N-1))
-    # eps <- 1e-15 I don't know wtf this is for
+    # eps <- 1e-15
     return(c(pbi, pbj, pbk))
 }
 

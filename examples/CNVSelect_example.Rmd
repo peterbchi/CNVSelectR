@@ -10,7 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Preliminaries
-This document demonstrates how to use the `CNVSelectR` package to take input files and run the method on them. First, we load the package:
+This document demonstrates how to use the `CNVSelectR` package to take input files and run the method on them. First, the package can be downloaded as a zip file from this github repository, and then in RStudio, go to Tools $\rightarrow$ Install Packages... from Package Archive File. 
+
+Then we load the package:
 ```{r}
 library(CNVSelectR)
 ```
@@ -19,13 +21,24 @@ library(CNVSelectR)
 # Requirements
 Two input files are required:
 
-  * csv file containing two columns, as shown below:
+  * CSV file containing two columns, as shown below:
   
   ![example csv file](csv.png)
   
   * txt file containing aligned sequences in FASTA format
 
 It is assumed that these files are in your current working directory.
+
+In the CSV file: 
+
+  * Ne refers to an estimate of the organismal effective population size. Larger Ne values will require more RAM and take longer to run. 
+  * Ploidy refers to the organismal ploidy, typically 1 for bacteria and 2 for eukaryotes. A model for values> 2 has not been implemented, and this `R` implementation currently only allows for diploid organisms, with the haploid version still in progress. 
+  * Full/approximate refers to the choice between applying the full Moran model or one of several approximations. This option will be updated in the future as only the full model is currently available. 
+  * Below the frequency label, please list the frequency of the duplicate in the population of interest. For each duplicate examined, include 2 sequences in order in a FASTA file saved in text format.
+
+The FASTA file should contain aligned codon (nucleotide) sequences representing the protein coding sequence for each copy of the gene duplicate. 
+
+Examples of each are provided in the `examples` directory of this github repository as a guide. Below, we use them to demonstrate the method.
 
 # Running the method
 Now, to generate the null model and obtain confidence intervals and p-values for each duplicate pair, we run:

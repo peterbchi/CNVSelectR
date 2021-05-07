@@ -20,6 +20,10 @@ CNVSelect_test <- function(input_file, fasta_file){
   inputs <- read_DAF(input_file)
   dS <- get_dS(fasta_file)
 
+  if(length(inputs$freqs) != length(dS)){
+    stop("number of sequences provided must be twice the number of frequencies")
+  }
+
   output$freqs <- inputs$freqs
   output$dS <- dS
 
