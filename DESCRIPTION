@@ -12,4 +12,5 @@ LazyData: true
 Depends:
         Matrix,
         seqinr,
-        readr
+        readr,
+        knitr
