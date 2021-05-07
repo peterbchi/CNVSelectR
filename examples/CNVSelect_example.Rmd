@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Preliminaries
-This document demonstrates how to use the `CNVSelectR` package to take input files and run the method on them. First, the package can be downloaded as a zip file from this github repository, and then in RStudio, go to Tools $\rightarrow$ Install Packages... from Package Archive File. 
+This document demonstrates how to use the `CNVSelectR` package to take input files and run the method on them. First, the package can be downloaded as a zip file from this github repository, and then in RStudio, go to Tools $\rightarrow$ Install Packages... from Package Archive File and point it to the zip file that was just downloaded. 
 
 Then we load the package:
 ```{r}
