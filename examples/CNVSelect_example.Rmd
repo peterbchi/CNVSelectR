@@ -34,11 +34,12 @@ Now, to generate the null model and obtain confidence intervals and p-values for
 test_out <- CNVSelect_test("cnv_sample_file_1.csv", "cnv_sample_file_2.txt")
 ```
 
-This output looks as follows:
+The raw output from this function looks as follows:
 ```{r}
 test_out
 ```
 
+# Creating summary output
 We can create a summary table and plot as follows:
 
 ```{r}
