@@ -18,6 +18,7 @@ get_dS <- function(fasta_file){
   x <- read.alignment(fasta_file,format="fasta")
   n.seq <- length(x$seq)
   dS <- NULL
+  col_names <- NULL
   if(n.seq > 2){
     seqs <- seq(1,n.seq, by=2)
     for(i in seqs){
@@ -26,7 +27,10 @@ get_dS <- function(fasta_file){
       pair$nam <- pair$nam[c(i, (i+1))]
       pair$nb <- 2
       dS <- c(dS, kaks(pair)$ks)
+      col_names <- c(col_names, paste(pair$nam[1], pair$nam[2], sep = "/"))
     }
   }
+  dS <- matrix(dS, nrow=1)
+  colnames(dS) <- col_names
   return(dS)
 }
