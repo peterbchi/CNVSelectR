@@ -34,8 +34,8 @@ CNVSelect_test <- function(input_file, fasta_file){
     out1 <- Genedupdip_neutralgenerator(inputs$N, up)
     out2 <- mexpv_dipneut(t=t, A=t(out1[[1]]), v=out1[[2]], N=inputs$N, Pos=out1[[3]])
 
-    output$CIlower[i] <- out2[[2]][length(out2[[2]])]
-    output$CIupper[i] <- out2[[3]][length(out2[[3]])]
+    output$crit_lower[i] <- out2[[2]][length(out2[[2]])]
+    output$crit_upper[i] <- out2[[3]][length(out2[[3]])]
 
     lower.tail <- out2[[5]][inputs$freqs[i]*2*inputs$N]
     if(lower.tail < 0.5){

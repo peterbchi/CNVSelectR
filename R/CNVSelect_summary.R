@@ -30,10 +30,10 @@ CNVSelect_summary <- function(test_out, make_kable=TRUE, sig_dig=3){
 
   # format and fill in confidence intervals
   for(i in 1:n.pairs){
-    output[i,3] <- paste("(", test_out$CIlower[i], ", ", test_out$CIupper[i], ")", sep="")
+    output[i,3] <- paste("(", test_out$crit_lower[i], ", ", test_out$crit_upper[i], ")", sep="")
   }
 
-  colnames(output) <- c("dS", "frequency", "95% CI", "p-value")
+  colnames(output) <- c("dS", "frequency", "0.05-level Crit. Vals", "p-value")
 
   # make a kable or return a matrix
   if(make_kable){

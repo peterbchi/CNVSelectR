@@ -21,7 +21,7 @@ CNVSelect_plot <- function(test_out){
        ylim=c(0,y_max),
        xlab="dS",
        ylab="frequency",
-       main="95% Confidence Intervals and data points",
+       main="Critical Value cutoffs and data points",
        pch=19)
 
   # add confidence intervals
@@ -29,8 +29,8 @@ CNVSelect_plot <- function(test_out){
   CI_lw <- x_max/50
 
   for(i in 1:n.seq){
-    lines(x=c(test_out$dS[i], test_out$dS[i]), y=c(test_out$CIlower[i], test_out$CIupper[i]))
-    lines(x=c(test_out$dS[i]-CI_lw, test_out$dS[i]+CI_lw), y=c(test_out$CIlower[i], test_out$CIlower[i]))
-    lines(x=c(test_out$dS[i]-CI_lw, test_out$dS[i]+CI_lw), y=c(test_out$CIupper[i], test_out$CIupper[i]))
+    lines(x=c(test_out$dS[i], test_out$dS[i]), y=c(test_out$crit_lower[i], test_out$crit_upper[i]))
+    lines(x=c(test_out$dS[i]-CI_lw, test_out$dS[i]+CI_lw), y=c(test_out$crit_lower[i], test_out$crit_lower[i]))
+    lines(x=c(test_out$dS[i]-CI_lw, test_out$dS[i]+CI_lw), y=c(test_out$crit_upper[i], test_out$crit_upper[i]))
   }
 }
