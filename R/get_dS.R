@@ -23,14 +23,14 @@ get_dS <- function(fasta_file){
   for(i in 1:n.seq){
     tmp <- unlist(strsplit(x$seq[[i]], ""))
     if(length(tmp)/3 != round(length(tmp)/3, 0)){
-      stop("All sequences must be of lengths that are a multiple of 3")
+      stop(paste("All sequences must be of lengths that are a multiple of 3; Sequence", i, "has", length(tmp), "sites"))
     }
     codon.starts <- seq(1, length(tmp), by=3)
     stop.codons <- c("taa", "tag", "tga", "TAA", "TAG", "TGA")
     for(j in codon.starts){
       codon <- paste(tmp[c(j, j+1, j+2)], collapse="")
       if(is.element(codon, stop.codons)){
-        stop("Sequences must not have internal stop codons")
+        stop(paste("Sequences must not have internal stop codons; Sequence ", i, " has the following stop codon that starts at nucleotide position ", j, ": ", codon, sep=""))
       }
     }
   }
