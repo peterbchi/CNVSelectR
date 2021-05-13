@@ -1,5 +1,5 @@
 ---
-title: "CNVSelectR Example"
+title: "CNVSelectR v0.9.0"
 author: "Peter Chi"
 date: "5/7/2021"
 output: pdf_document
@@ -10,7 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Preliminaries
-This document demonstrates how to use the `CNVSelectR` package to take input files and run the method on them. First, the package can be downloaded as a zip file from this github repository, and then in RStudio, go to Tools $\rightarrow$ Install Packages... from Package Archive File and point it to the zip file that was just downloaded. 
+This document demonstrates how to use the `CNVSelectR` package to take input files and run the method on them. This package is still under development and is currently on version 0.9.0; however, many of its functionalities are in place.
+
+First, the package can be downloaded as a zip file from this github repository, and then in RStudio, go to Tools $\rightarrow$ Install Packages... from Package Archive File and point it to the zip file that was just downloaded. 
 
 Then we load the package:
 ```{r}
